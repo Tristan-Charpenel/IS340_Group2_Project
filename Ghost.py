@@ -108,11 +108,6 @@ class Ghost:
     def isValid(self, cRow, cCol):
         if cCol < 0 or cCol > len(init.gameBoard[0]) - 1:
             return True
-        # for ghost in game.ghosts:
-        #     if ghost.color == self.color:
-        #         continue
-        #     if ghost.row == cRow and ghost.col == cCol and not self.dead:
-        #         return False
         if not ghostGate.count([cRow, cCol]) == 0:
             if self.dead and self.row < cRow:
                 return True
@@ -172,18 +167,6 @@ class Ghost:
 
         # Records the quadrants of each ghost's target
         quads = [0, 0, 0, 0]
-        # for ghost in game.ghosts:
-        #     # if ghost.target[0] == self.row and ghost.col == self.col:
-        #     #     continue
-        #     if ghost.target[0] <= 15 and ghost.target[1] >= 13:
-        #         quads[0] += 1
-        #     elif ghost.target[0] <= 15 and ghost.target[1] < 13:
-        #         quads[1] += 1
-        #     elif ghost.target[0] > 15 and ghost.target[1] < 13:
-        #         quads[2] += 1
-        #     elif ghost.target[0]> 15 and ghost.target[1] >= 13:
-        #         quads[3] += 1
-
         # Finds a target that will keep the ghosts dispersed
         while True:
             self.target = [randrange(31), randrange(28)]

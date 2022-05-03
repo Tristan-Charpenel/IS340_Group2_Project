@@ -63,11 +63,6 @@ class Pacman:
 
     # Draws pacman based on his current state
     def draw(self):
-        # if not ga.game.started:
-        #     pacmanImage = pygame.image.load(init.ElementPath + "tile112.png")
-        #     pacmanImage = pygame.transform.scale(pacmanImage, (int(init.square * init.spriteRatio), int(init.square * init.spriteRatio)))
-        #     init.screen.blit(pacmanImage, (self.col * init.square + init.spriteOffset, self.row * init.square + init.spriteOffset, init.square, init.square))
-        #     return
 
         if self.mouthChangeCount == self.mouthChangeDelay:
             self.mouthChangeCount = 0
